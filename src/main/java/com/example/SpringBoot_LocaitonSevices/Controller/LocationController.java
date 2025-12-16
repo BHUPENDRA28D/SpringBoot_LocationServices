@@ -51,19 +51,21 @@ public class LocationController {
 
 
     /*
-     *  GETMAPPED --- geting near by Driver
+     *  POSTMAPPING --- geting nearby Driver
      */
     @PostMapping("/nearby/drivers")
     public ResponseEntity<List<DriverLocationDTO>> getNearByDriverS(@RequestBody NearbyDriverRequestDTO nearByDriversRequestDTO) {
 
         try {
 
-           List<DriverLocationDTO> drivers = locationServices.getNearByDrivers(nearByDriversRequestDTO.getLatitude(), nearByDriversRequestDTO.getLongitude());
+
+            List<DriverLocationDTO> drivers = locationServices.getNearByDrivers(nearByDriversRequestDTO.getLatitude(), nearByDriversRequestDTO.getLongitude());
 
             return new ResponseEntity<>(drivers, HttpStatus.OK);
         }
         catch (Exception e){
             e.printStackTrace();
+            System.out.println("Failuer her !!! ");
             return new ResponseEntity<>(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

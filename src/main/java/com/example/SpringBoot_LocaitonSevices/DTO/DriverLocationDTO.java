@@ -9,7 +9,7 @@ import lombok.*;
 @Builder
 public class DriverLocationDTO {
 
-    String driverId;
-    Double latitude;
-    Double longitude;
+     private    String driverId;
+    private Double latitude;
+    private Double longitude;
 }
