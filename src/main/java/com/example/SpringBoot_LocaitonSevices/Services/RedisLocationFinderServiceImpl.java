@@ -14,7 +14,7 @@ public class RedisLocationFinderServiceImpl implements LocationServices {
 
 
     private static  final String DRIVER_OPS_KEY ="drivers";
-    private static  final Double SEARCH_RADIUS = 2.00;
+    private static  final Double SEARCH_RADIUS = 8.00;
 
 
     private StringRedisTemplate stringRedisTemplate;
